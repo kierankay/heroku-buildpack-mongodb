@@ -28,6 +28,7 @@ curl $download_url -s -o - | tar xzf - -C /tmp
 
 # Move mongodb binaries into the app directory
 mv "/tmp/${folder_name}"/* $heroku_dir/mongo
+mkdir -p /app/.heroku/mongo/data/db
 chmod +x $heroku_dir/mongo/bin/*
 
 echo "-----> Creating runtime environment"
